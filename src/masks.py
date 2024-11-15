@@ -1,6 +1,5 @@
 import widget
 from widget import output_data
-widget.mask_account_card("Счет 73654108430135874305")
 
 
 if len(output_data[0]) == 16:

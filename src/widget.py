@@ -2,17 +2,16 @@ def mask_account_card(user_input: str) -> str:
     """Функция принимает на вход пользовательские данные и достает номер карты или счета."""
     number = ""
     card_name = " "
-    card_number = ''
-    account_number = ''
     for i in user_input:
         if i.isdigit():
             number += i
         else:
             card_name += i
-
     return [number, card_name]
 
-output_data = mask_account_card("Счет 73654108430135874305")
+
+output_data = mask_account_card("Visa Classic 6831982476737658")
+
 
 def get_date(date_input: str) -> str:
     """Функция принимает дату в некорректном виде и возвращает в корректном"""
