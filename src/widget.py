@@ -15,6 +15,7 @@ def mask_account_card(user_input: str) -> str:
 output_data = mask_account_card("Счет 73654108430135874305")
 
 def get_date(date_input: str) -> str:
+    """Функция принимает дату в некорректном виде и возвращает в корректном"""
     index_date = list(date_input)
     day = index_date[8] + index_date[9]
     month = index_date[5] + index_date[6]

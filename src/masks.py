@@ -23,4 +23,3 @@ def get_mask_account(account_number: str) -> str:
     return f"{output_data[1]} {private_account}"
 
 
-print(get_mask_account(account_number))
