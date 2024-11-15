@@ -1,7 +1,7 @@
 import widget
 from widget import output_data
 
-
+# блок, который определяет, что это, номер карты или счета
 if len(output_data[0]) == 16:
     card_number = output_data[0]
 elif len(output_data[0]) > 16:
