@@ -1,3 +1,5 @@
+from masks import get_mask_card_number
+from masks import get_mask_account
 def mask_account_card(user_input: str) -> str:
     """Функция принимает на вход пользовательские данные и достает номер карты или счета."""
     number = ""
@@ -9,11 +11,11 @@ def mask_account_card(user_input: str) -> str:
             card_name += i
     # блок, который определяет, что это, номер карты или счета
     if len(number) == 16:
-        from masks import get_mask_card_number
+
         card_number = number
         return f"{card_name} {get_mask_card_number(card_number)}"
     elif len(number) > 16:
-        from masks import get_mask_account
+
         account_number = number
         return f"{card_name} {get_mask_account(account_number)}"
     else:
@@ -30,4 +32,4 @@ def get_date(date_input: str) -> str:
     return correct_date
 
 
-print(mask_account_card("Счет 64686473678894779589"))
+print(mask_account_card("Visa Platinum 7000792289606361"))
