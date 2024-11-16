@@ -7,10 +7,17 @@ def mask_account_card(user_input: str) -> str:
             number += i
         else:
             card_name += i
-    return [number, card_name]
-
-
-output_data = mask_account_card("Visa Classic 6831982476737658")
+    # блок, который определяет, что это, номер карты или счета
+    if len(number) == 16:
+        from masks import get_mask_card_number
+        card_number = number
+        return f"{card_name} {get_mask_card_number(card_number)}"
+    elif len(number) > 16:
+        from masks import get_mask_account
+        account_number = number
+        return f"{card_name} {get_mask_account(account_number)}"
+    else:
+        pass
 
 
 def get_date(date_input: str) -> str:
@@ -22,3 +29,5 @@ def get_date(date_input: str) -> str:
     correct_date = day + '.' + month + '.' + year
     return correct_date
 
+
+print(mask_account_card("Счет 64686473678894779589"))
